@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Practice note</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/theme/eclipse.min.css"
+  />
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.js"
+  ></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/mode/xml/xml.min.js"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/mode/css/css.min.js"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/mode/javascript/javascript.min.js"
+  ></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/prettier@2.8.8/standalone.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prettier@2.8.8/parser-babel.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prettier@2.8.8/parser-postcss.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prettier@2.8.8/parser-html.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/diff_match_patch/20121119/diff_match_patch.js"></script>
+</head>
+<body>
+
+  <div class="editor-area">
+    <div class="editor">
+      <h2>HTML</h2>
+      <textarea id="htmlCode" class="code-input"></textarea>
+
+      <h2>CSS</h2>
+      <textarea id="cssCode" class="code-input"></textarea>
+
+      <h2>JavaScript</h2>
+      <textarea id="jsCode" class="code-input"></textarea>
+    </div>
+    <iframe id="preview" class="preview"></iframe>
+  </div>
+
+  <div class="button-area">
+    <button id="previewBtn">Preview</button>
+    <button id="formatBtn">Format Code</button>
+    <button id="saveVersionBtn">Save Version</button>
+    <button id="diffBtn">Show Diff (Last Version)</button>
+    <select id="deviceSelect">
+      <option value="100%">Desktop (100%)</option>
+      <option value="768px">Tablet (768px)</option>
+      <option value="375px">Mobile (375px)</option>
+    </select>
+  </div>
+
+  <div id="diffArea" class="diff-area"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
